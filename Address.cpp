@@ -2,11 +2,13 @@
 #include<iostream>
 using namespace std;
 
-Address::ostream& operator<<(ostream& str,const Address& d ){
+ostream& operator<<(ostream& str,const Address& d ){
 str<<d.country<<d.city<<d.street;
+return str;
 }
-Address::istream& operator>>(istream& str, Address& d){
+istream& operator>>(istream& str, Address& d){
 str>>d.country>>d.city>>d.street;
+return str;
 }
     string Address::getcountry()const{
     return country;
@@ -27,4 +29,3 @@ str>>d.country>>d.city>>d.street;
 
         street=name;
     }
-    
