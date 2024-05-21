@@ -9,17 +9,17 @@ using namespace std;
     string name,id;
     Address address;
     public:
-    Person(string n,string i,Address a): name(n),id(i),address(a){
-        validate(id);
-    }
-    Person(const Person& a){
-        name=a.name;
-        id=a.id;
-        address=a.address;
-    }
+    Person(string ,string ,Address);
+    Person(const Person&);
     bool validate(string);
-    
-
+    friend ostream& operator<<(ostream&,const Address& );
+    friend istream& operator>>(istream&, Address&);
+    Person operator=(const Person&);
+    string getname()const;
+    void setname(string);
+    string getid()const;
+    void setid(string);
+   
 
  };
 
