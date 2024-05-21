@@ -10,6 +10,7 @@ istream& operator>>(istream& str, Address& d){
 str>>d.country>>d.city>>d.street;
 return str;
 }
+
     string Address::getcountry()const{
     return country;
     }
