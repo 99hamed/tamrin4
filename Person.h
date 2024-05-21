@@ -9,7 +9,7 @@ using namespace std;
     string name,id;
     Address address;
     public:
-    Person(string ,string ,Address);
+    Person(string ,string );
     Person(const Person&);
     bool validate(string);
     friend ostream& operator<<(ostream&,const Address& );
