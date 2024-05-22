@@ -9,11 +9,11 @@ using namespace std;
     string name,id;
     Address address;
     public:
-    Person(string ,string );
+    Person(string ,string);
     Person(const Person&);
-    bool validate(string);
-    friend ostream& operator<<(ostream&,const Address& );
-    friend istream& operator>>(istream&, Address&);
+    bool validate(string&);
+    friend ostream& operator<<(ostream&,const Person& );
+    friend istream& operator>>(istream&, Person&);
     Person operator=(const Person&);
     string getname()const;
     void setname(string);
