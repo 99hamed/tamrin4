@@ -5,13 +5,12 @@
 using namespace std;
 class Employee {
 private:
-int hourWork,salaryPerHour,WorToDo,workDone;
+int hourWork,salaryPerHour,workToDo,workDone;
 public:
 string name;
 string id;
 Address address;
-Employee (int,int,int,int);
-Employee (string ,string);
+Employee (string,string,int,int,int,int);
 Employee (const Employee&);
 friend ostream& operator<<(ostream&,const Employee&);
 friend istream& operator>>(istream&,Employee&);
@@ -34,10 +33,10 @@ Employee operator=(const Employee &);
     int getworkdone()const;
     void setworkdone(int);
 
-    bool validate(string);
-    void calculateSalary();
-    void efficiency();
-    
+    bool validate(string&);
+    int calculateSalary();
+    double efficiency();
+
 
 };
 
