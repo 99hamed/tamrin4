@@ -8,6 +8,7 @@ class Address{
     string country,city,street;
     public:
     Address(string a,string b,string c) : country(a),city(b),street(c){}
+    Address();
     friend ostream& operator<<(ostream&,const Address& );
     friend istream& operator>>(istream&, Address&);
     string getcountry()const;
