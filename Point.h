@@ -13,10 +13,10 @@ friend Point operator-(const Point &,const Point &);
 Point& operator/=(int);
 Point operator=(const Point&);
 bool operator>=(const Point &);
-string getx()const;
-void setx(string);
-string gety()const;
-void sety(string);
+int getx()const;
+void setx(int);
+int gety()const;
+void sety(int);
 };
 
 #endif
