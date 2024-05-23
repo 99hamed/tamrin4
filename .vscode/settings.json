@@ -3,6 +3,8 @@
         "*.tcc": "cpp",
         "memory_resource": "cpp",
         "type_traits": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "atomic": "cpp",
+        "complex": "cpp"
     }
 }
