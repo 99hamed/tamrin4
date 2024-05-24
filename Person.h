@@ -9,12 +9,13 @@ using namespace std;
     string name,id;
     Address address;
     public:
-    Person(string ,string);
-    Person(const Person&);
-    bool validate(string&);
-    friend ostream& operator<<(ostream&,const Person& );
-    friend istream& operator>>(istream&, Person&);
-    Person operator=(const Person&);
+    Person(Address,string ,string); // two arg constructor
+    Person(const Person&); // copy constructor
+    bool validate(string&); // validate func header
+    friend ostream& operator<<(ostream&,const Person& ); // << operator
+    friend istream& operator>>(istream&, Person&); // >> opererator
+    Person operator=(const Person&); // operator assingment(=)
+    // getter and setter func
     string getname()const;
     void setname(string);
     string getid()const;

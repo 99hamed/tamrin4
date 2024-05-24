@@ -1,9 +1,11 @@
 #include"Employee.h"
 #include<iostream>
 using namespace std;
-Employee::Employee(string n,string i,int a,int b,int c,int d): name(n),id(i),hourWork(a),salaryPerHour(b),workToDo(c),workDone(d){
-if(validate(id)==false)
+
+Employee::Employee(Address address,string n,string i,int a=0,int b=0,int c=0,int d=0): address(address),name(n),id(i),hourWork(a),salaryPerHour(b),workToDo(c),workDone(d){
+if(validate(id)==false){
 cout<<"invalid id"<<endl;
+exit(0);}
 }
 
 Employee::Employee (const Employee& other){
@@ -13,6 +15,8 @@ Employee::Employee (const Employee& other){
      workDone=other.workDone;
      name=other.name;
      id=other.id;
+     address=other.address;
+     
 }
 ostream& operator<<(ostream& str,const Employee& employee ){
  str << employee.name << employee.id <<  employee.address
@@ -33,6 +37,7 @@ workToDo=other.workToDo;
 workDone=other.workDone;
 name=other.name;
 id=other.id;
+address=other.address;
 return *this;
 }
     string Employee::getname()const{return name;}
@@ -53,17 +58,17 @@ return *this;
     int Employee::getworkdone()const{return workDone; }
     void Employee::setworkdone(int d){ workDone=d;}
 
-  int Employee::calculateSalary() {
+int Employee::calculateSalary() {
         int baseSalary = hourWork * salaryPerHour;
         int workNotDone = workToDo - workDone;
         double deduction = (double(workNotDone) / workToDo) * baseSalary;
         return baseSalary - deduction;
     }
 
-    double Employee::efficiency() {
+double Employee::efficiency() {
         return double(workDone) / (hourWork == 0 ? 1 : hourWork);
     }
-     bool Employee::validate(string& id)  {
+bool Employee::validate(string& id)  {
         int length = id.length();
 
         // Check length
@@ -72,14 +77,16 @@ return *this;
         // Check the first two characters (year of entry)
         int year = std::stoi(id.substr(0, 2));
         if (year < 84 || year > 99) return false;
-
+        // check * character
+        if(id[2]!='*') return false;
         // Check the next 1-3 non-digit characters
         int nonDigitCount = 0;
-        for (int i = 2; i < length && !std::isdigit(id[i]); ++i) {
+        for (int i = 3; i < length && !std::isdigit(id[i]); ++i) {
+           
             ++nonDigitCount;
         }
         if (nonDigitCount < 1 || nonDigitCount > 3) return false;
-
+        
         // Check the last five characters (digits less than 4 or greater than 6)
         for (int i = length - 5; i < length; ++i) {
             if (std::isdigit(id[i])) {

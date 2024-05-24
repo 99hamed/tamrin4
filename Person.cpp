@@ -4,9 +4,12 @@
 #include<cstring>
 using namespace std;
  
- Person::Person(string a,string b): name(a),id(b){
-    if(validate(id)==false)
+Person::Person(Address address,string a,string b): address(address),name(a),id(b){
+    if(validate(id)==false){
         cout<<"id is invalid"<<endl;
+        exit(0);
+        }
+
  }
 Person::Person(const Person& a){
     name=a.name;
@@ -25,21 +28,11 @@ return str;
 Person Person::operator=(const Person& d){
 name=d.name;
 id=d.id;
+address=d.address;
 return *this;
 }
-    string Person::getname()const{
-    return name;
-}
-    void Person::setname(string n){
-        name=n;
-    }
-    string Person::getid()const{
-        return id;
-    }
-    void Person::setid(string i){
-        id=i;
-    }
-     bool Person::validate(string& id){
+
+    bool Person::validate(string& id){ // func to chec
         int length = id.length();
 
        
@@ -68,5 +61,12 @@ return *this;
 
         return true;
     }
-
+        string Person::getname()const{
+            return name;}
+        void Person::setname(string n){
+            name=n;}
+        string Person::getid()const{
+            return id;}
+        void Person::setid(string i){
+            id=i;}
    

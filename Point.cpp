@@ -1,6 +1,7 @@
 #include"Point.h"
 #include<cmath>
 Point::Point(int a,int b): x(a),y(b){}
+Point::Point(): x(0),y(0){}
 Point::Point(const Point & P){
 x=P.x;
 y=P.y;
@@ -16,8 +17,9 @@ int ny=a.y-b.y;
 return Point(nx,ny);
  }
 Point& Point::operator/=(int num){
-if (num==0) 
+if (num==0){
 cout<<"invalid number";
+return *this;}
 
 else{
     x/=num;

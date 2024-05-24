@@ -6,16 +6,21 @@ private:
 Point startPoint;
  int width,height;
 public:
-Rectangle(int,int);
-Rectangle(const Rectangle&);
-Rectangle& operator+=(const Rectangle&);
-Rectangle& operator-=(const Rectangle &);
-friend Rectangle operator/ (const Rectangle& ,const Rectangle &);
+Rectangle(Point,int,int); // constructor two arg
+Rectangle();
+Rectangle(const Rectangle&); // copy constructor
+Rectangle& operator+=(const Rectangle&); // operator + and assignment
+Rectangle& operator-=(const Rectangle &); // operator - and assignmet
+ friend Rectangle operator/ (const Rectangle&,const Rectangle&); // operator divide
+// getter and setter method
 int getwidth()const;
 void setwidth(int);
 int getheight()const;
 void setheight(int);
-bool collisionDetection(const Rectangle &,const Rectangle &);
+Point getStartPoint()const;
+void setStartPoint(const Point&);
+
+bool collisionDetection(const Rectangle &,const Rectangle &); // check if the rectangle has accident
 };
 
 

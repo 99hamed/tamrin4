@@ -6,13 +6,15 @@ class Point{
 private:
 int x,y;
 public:
-Point(int,int);
-Point(const Point&);
-friend Point operator+(const Point&,const Point&);
-friend Point operator-(const Point &,const Point &);
-Point& operator/=(int);
-Point operator=(const Point&);
-bool operator>=(const Point &);
+Point(int,int); // constructor
+Point();
+Point(const Point&); // copy constructor
+friend Point operator+(const Point&,const Point&); // operator +
+friend Point operator-(const Point &,const Point &); // operator -
+Point& operator/=(int); // operaator divide and assignment
+Point operator=(const Point&); // operator assingment
+bool operator>=(const Point &); 
+// getter and setter function
 int getx()const;
 void setx(int);
 int gety()const;
