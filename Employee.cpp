@@ -3,9 +3,9 @@
 using namespace std;
 
 Employee::Employee(Address address,string n,string i,int a=0,int b=0,int c=0,int d=0): address(address),name(n),id(i),hourWork(a),salaryPerHour(b),workToDo(c),workDone(d){
-if(validate(id)==false){
+if(validate(i)==true){
 cout<<"invalid id"<<endl;
-exit(0);}
+}
 }
 
 Employee::Employee (const Employee& other){

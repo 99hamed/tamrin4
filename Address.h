@@ -7,8 +7,8 @@ class Address{
     private:
     string country,city,street;
     public:
-    Address(string a,string b,string c) : country(a),city(b),street(c){} // three arg constructor
-    Address(): country("iran"),city("tehran"),street("main"){} // default constructor
+    Address(string ,string ,string ); // three arg constructor
+    Address();// default constructor
     friend ostream& operator<<(ostream&,const Address& ); // operator <<
     friend istream& operator>>(istream&, Address&); // operator >>
     // getter and setter method

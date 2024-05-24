@@ -5,9 +5,9 @@
 using namespace std;
  
 Person::Person(Address address,string a,string b): address(address),name(a),id(b){
-    if(validate(id)==false){
+    if(validate(b)==true){
         cout<<"id is invalid"<<endl;
-        exit(0);
+      
         }
 
  }
